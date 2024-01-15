@@ -1,0 +1,62 @@
+import { useState } from "react";
+
+function App() {
+  const [color, setColor] = useState("olive");
+
+  return (
+    <div className="w-full h-screen duration-500 " style={{backgroundColor:color}}>
+      <div  className="flex flex-col space-y-2 md:flex-row md:space-x-2 md:space-y-0 border-double border-2 rounded-2xl bg-white p-1 absolute inset-x-10 bottom-10 ">
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("black")} 
+          className="rounded-full bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Black
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("white")}
+          className="rounded-full bg-white px-3 py-2 text-sm font-semibold text-black shadow-sm border-solid border-black border-2 "
+        >
+          white
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("red")}
+          className="rounded-full bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Red
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("green")}
+          className="rounded-full bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Green
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("rgb(37 99 235)")}
+          className="rounded-full bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Blue
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("rgb(234 88 12 )")}
+          className="rounded-full bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Orange
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("rgb(202 138 4)")}
+          className="rounded-full bg-yellow-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Yellow
+        </button>
+        <button
+          onMouseLeave={()=>setColor("pink")} onMouseOver={()=>setColor("rgb(2 132 199)")}
+          className="rounded-full bg-sky-600 px-3 py-2 text-sm font-semibold text-white shadow-sm "
+        >
+          Sky
+        </button>
+      </div> 
+    </div>
+  );
+}
+
+export default App;
