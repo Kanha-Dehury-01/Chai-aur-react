@@ -27,6 +27,7 @@ function App() {
     passwordRef.current?.select()
     passwordRef.current?.setSelectionRange(0,100)
     window.navigator.clipboard.writeText(password)
+    alert("Password copied to clipboard (windows key + v)")
   } ,[password] )
 
   //called the password generate function on effect
@@ -36,9 +37,10 @@ function App() {
 
   return (
     <>
-      <h1 className="text-4xl text-center text-white">Password Generator</h1>
-      <div className="w-full max-w-md mx-auto shadow-lg rounded-lg px-4 py-3 my-8 bg-gray-800 text-orange-500 ">
-        <div className="flex shadow rounded-lg overflow-hidden mb-4 ">
+      <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-full max-w-lg mx-auto shadow-lg rounded-lg p-9 my-8 bg-gray-800 text-orange-500 ">
+        <h1 className="text-4xl text-center text-white">Password Generator</h1>
+        <div className="flex shadow-2xl rounded-lg overflow-hidden mb-4 mt-2 ">
           <input
             className="outline-none w-full py-1 px-3"
             type="text"
@@ -47,11 +49,11 @@ function App() {
             readOnly
             ref={passwordRef}
           />
-          <button onClick={copyToClipboard} className="outline-none bg-blue-700 text-white px-3 py-0.5 ">
+          <button onClick={copyToClipboard} className="outline-none bg-blue-500 text-white px-3 py-2 hover:bg-blue-700 ">
             Copy
           </button>
         </div>
-        <div className="flex gap-3 ">
+        <div className="flex gap-3 justify-around pt-6 ">
           <input
             type="range"
             min={8}
@@ -81,6 +83,7 @@ function App() {
           />
           <label> Character </label>
         </div>
+      </div>
       </div>
     </>
   );
