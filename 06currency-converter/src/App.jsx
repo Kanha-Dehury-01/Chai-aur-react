@@ -8,7 +8,7 @@ function App() {
   const [from, setFrom] = useState("inr");
   const [convertdAmount, setConvertdAmount] = useState(0);
 
-  const currencyInfo = useCurrencyInfo(from);
+  const [currencyInfo,date] = useCurrencyInfo(from);
 
   const option = Object.keys(currencyInfo);
 
@@ -30,6 +30,7 @@ function App() {
       <div className="w-full">
         <div className="w-full max-w-lg mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/20">
           <h1 className="text-4xl mb-2 text-center font-bold text-white/50">Currency Converter</h1>
+          <p className="text-l text-right text-white/50">Currency as on : {date}</p>
           <form
             onSubmit={(e) => {
               e.preventDefault();
